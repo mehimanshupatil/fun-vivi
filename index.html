@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Artsy Journey 🎨</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f5e6cc;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e91e63;
+        }
+
+        #reveal {
+            display: none;
+            margin-top: 50px;
+        }
+
+        img {
+            margin-top: 20px;
+            max-width: 320px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Art-themed Loading Screen -->
+    <div id="loading">
+        <h2>Mixing the perfect colors... 🎨</h2>
+        <p>Hold on while we find the right shade... 😅</p>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('loading').innerHTML = '<h2>Almost done! Just adding the final brush strokes... 😜</h2>';
+        }, 5000);
+        setTimeout(() => {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('quiz').style.display = 'block';
+        }, 8000);
+    </script>
+
+    <!-- Artsy Impossible Quiz -->
+    <div id="quiz" style="display: none;">
+        <h3>What color would a unicorn paint the sky? 🌈</h3>
+        <input type="text" placeholder="Your Answer" />
+        <button onclick="revealPrank1()">Submit</button>
+    </div>
+
+    <script>
+        let prank1 = 0
+        function revealPrank1() {
+            console.log('prank1', prank1)
+            if (prank1 > 1) {
+                alert('Nice try! But the real color is... all the colors combined! 🌈✨ Just kidding, you’re amazing!');
+
+                document.getElementById('puzzle').style.display = 'block';
+            } else {
+                alert('Hmm, that doesn’t seem right. Try again.');
+                prank1 = prank1 + 1;
+            }
+        }
+    </script>
+
+    <!-- Puzzle: Arrange the Colors -->
+    <div id="puzzle" style="display: none;">
+        <h3>Which color comes first in a rainbow? 🌈</h3>
+        <input type="text" placeholder="Your Answer" />
+        <button onclick="revealPrank2()">Submit</button>
+    </div>
+    <script>
+        let prank2 = 0
+        function revealPrank2() {
+            if (prank2 > 2) {
+                alert('You got it right');
+                document.getElementById('quiz').style.display = 'none';
+                document.getElementById('puzzle').style.display = 'none';
+                document.getElementById('reveal').style.display = 'block';
+            }
+            else {
+                alert('Hmm, that doesn’t seem right. Try again.');
+                prank2 = prank2 + 1;
+            }
+        }
+    </script>
+
+
+
+    <!-- Final Artsy Reveal -->
+    <div id="reveal">
+        <h2>Just kidding! You’re the real masterpiece here! 🎨💖 and this is just a prank wait for real gift</h2>
+        <img src='./vivi.png' />
+        <p>Nefertari Vivi, Princess of Arabasta</p>
+    </div>
+
+
+
+</body>
+
+</html>
